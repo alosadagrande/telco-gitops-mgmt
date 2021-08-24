@@ -23,11 +23,9 @@ spec:
         - /dev/autopart/lv_5
         - /dev/autopart/lv_6
         - /dev/autopart/lv_7
-        - /dev/autopart/lv_8
-        - /dev/autopart/lv_9
-        - /dev/autopart/lv_10
     - storageClassName: "lso-blockclass" 
       volumeMode: Block  
       devicePaths: 
-        - /dev/autopart/lv_4 
-        - /dev/autopart/lv_5
+        - /dev/autopart/lv_8 
+        - /dev/autopart/lv_9
+        - /dev/autopart/lv_10
