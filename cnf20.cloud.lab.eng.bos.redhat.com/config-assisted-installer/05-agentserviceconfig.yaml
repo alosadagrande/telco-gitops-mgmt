@@ -4,7 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: assisted-service-config
-  namespace: assisted-installer
+  namespace: open-cluster-management
 data:
   LOG_LEVEL: "debug"
 ---
@@ -12,20 +12,20 @@ apiVersion: agent-install.openshift.io/v1beta1
 kind: AgentServiceConfig
 metadata:
   name: agent
-  namespace: assisted-installer
+  namespace: open-cluster-management
   annotations:
     # ConfigMap for Env variables (dev only)
     unsupported.agent-install.openshift.io/assisted-service-configmap: 'assisted-service-config'
 spec:
   databaseStorage:
-    # storageClassName: lso-blockclass
+    storageClassName: lso-blockclass
     accessModes:
     - ReadWriteOnce
     resources:
       requests:
         storage: 18Gi
   filesystemStorage:
-    # storageClassName: lso-filesystemclass
+    storageClassName: lso-filesystemclass
     accessModes:
     - ReadWriteOnce
     resources:
