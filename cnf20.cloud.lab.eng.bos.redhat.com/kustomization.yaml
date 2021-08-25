@@ -20,7 +20,7 @@ bases:
   # Operators for MGMT Clusters
   - github.com/alosadagrande/telco-gitops/blueprints/mgmt?ref=main
   # Hive
-  - github.com/alosadagrande/telco-gitops/base/operators/hive
+  #- github.com/alosadagrande/telco-gitops/base/operators/hive
   # Red Hat Advanced Cluster Manager for Kubernetes
   - github.com/alosadagrande/telco-gitops/base/operators/advanced-cluster-management?ref=main
   # OpenShift Container storage
@@ -32,7 +32,7 @@ bases:
   # OpenShift Logging
   # - github.com/openshift-telco/telco-gitops/base/operators/openshift-logging?ref=main
   # Configure telco-gitops for cluster
-  - ./telco-gitops
+###  - ./telco-gitops
 
 resources:
   - 01-master-create-lvs-for-lso.yaml
