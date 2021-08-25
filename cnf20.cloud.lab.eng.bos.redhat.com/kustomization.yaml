@@ -31,10 +31,8 @@ bases:
   # - github.com/openshift-telco/telco-gitops/base/operators/quay-enterprise-operator?ref=main
   # OpenShift Logging
   # - github.com/openshift-telco/telco-gitops/base/operators/openshift-logging?ref=main
-  # Configure telco-gitops from git-ops base
-  - github.com/alosadagrande/telco-gitops/base/configs/telco-gitops?ref=main
   # Configure telco-gitops for cluster
-###  - ./telco-gitops
+  - ./telco-gitops
 
 resources:
   - 01-master-create-lvs-for-lso.yaml

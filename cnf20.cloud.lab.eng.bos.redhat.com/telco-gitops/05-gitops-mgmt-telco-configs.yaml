@@ -8,7 +8,7 @@ spec:
   generators:
     - git:
         directories:
-          - path: cnf20.cloud.lab.eng.bos.redhat.com/config-*
+          - path: cnf20.cloud.lab.eng.bos.redhat.com/config-
         repoURL: 'https://github.com/alosadagrande/telco-gitops-mgmt.git'
         revision: HEAD
   template:
