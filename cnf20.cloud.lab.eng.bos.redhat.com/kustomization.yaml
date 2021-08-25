@@ -32,7 +32,11 @@ bases:
   # OpenShift Logging
   # - github.com/openshift-telco/telco-gitops/base/operators/openshift-logging?ref=main
   # Configure telco-gitops for cluster
+<<<<<<< HEAD
 ###  - ./telco-gitops
+=======
+ ### - ./telco-gitops
+>>>>>>> 69e3501b59d0e92fbeb5b54a426bab8f7f27a2cc
 
 resources:
   - 01-master-create-lvs-for-lso.yaml
