@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap-mgmt
+  namespace: telco-gitops 
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  annotations:
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      jsonnet: {}
+    path: cnf20.cloud.lab.eng.bos.redhat.com/
+    repoURL: https://github.com/alosadagrande/telco-gitops-mgmt.git 
+    targetRevision: main
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
