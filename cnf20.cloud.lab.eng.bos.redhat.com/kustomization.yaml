@@ -19,8 +19,8 @@ bases:
   - github.com/alosadagrande/telco-gitops/base/configs/all-common?ref=main
   # Operators for MGMT Clusters
   - github.com/alosadagrande/telco-gitops/blueprints/mgmt?ref=main
-  # Hive
-  # - github.com/alosadagrande/telco-gitops/base/operators/hive
+  # Hive patch and clusterImageSet versions
+  - github.com/alosadagrande/telco-gitops/base/configs/hive?ref=main
   # Red Hat Advanced Cluster Manager for Kubernetes
   - github.com/alosadagrande/telco-gitops/base/operators/advanced-cluster-management?ref=main
   # OpenShift Container storage
