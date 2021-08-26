@@ -18,7 +18,7 @@ metadata:
     unsupported.agent-install.openshift.io/assisted-service-configmap: 'assisted-service-config'
 spec:
   databaseStorage:
-    storageClassName: lso-blockclass
+    storageClassName: lso-filesystemclass
     accessModes:
     - ReadWriteOnce
     resources:
