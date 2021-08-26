@@ -20,7 +20,7 @@ spec:
             - |
               echo "ArgoCD Hook"
               CSV_STATUS="Pausing $SLEEP seconds..."
-              while [ "$CSV_STATUS" != "Succeeded" ]; do
+              while [[ "$CSV_STATUS" != *"condition met" ]]; do
                 echo "Waiting for the Telco GitOps Operator to be ready. ($CSV_STATUS)"
                 sleep $SLEEP
                 CSV_STATUS=$( oc -n telco-gitops wait --for=condition=Ready pod -l app.kubernetes.io/name=telco-gitops-server )
