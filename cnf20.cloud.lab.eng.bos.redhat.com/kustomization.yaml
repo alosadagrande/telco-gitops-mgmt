@@ -33,5 +33,6 @@ bases:
   - ./telco-gitops
 
 resources:
+  - 00-lso-label-nodes.yaml
   - 01-master-create-lvs-for-lso.yaml
   - 02-lso-localvolume-lvs.yaml
