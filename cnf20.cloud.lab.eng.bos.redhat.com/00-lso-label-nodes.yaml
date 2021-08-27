@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    ran.openshift.io/lso: ""
+  name: eko5.cnf20.cloud.lab.eng.bos.redhat.com
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    ran.openshift.io/lso: ""
+  name: eko6.cnf20.cloud.lab.eng.bos.redhat.com
+---
+apiVersion: v1
+kind: Node
+metadata:
+  labels:
+    ran.openshift.io/lso: ""
+  name: eko7.cnf20.cloud.lab.eng.bos.redhat.com
+---
+
