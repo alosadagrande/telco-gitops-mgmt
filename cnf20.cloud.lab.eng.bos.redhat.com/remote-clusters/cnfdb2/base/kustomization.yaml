@@ -14,7 +14,7 @@ bases:
   # Operator Installs
   # ---
   # Common Operators
-  - github.com/openshift-telco/telco-gitops/base/configs/all-common?ref=main
+  - github.com/alosadagrande/telco-gitops/base/configs/all-common?ref=main
   # Performance Addon Operator
   - github.com/alosadagrande/telco-gitops/base/operators/openshift-performance-addon-operator/pao-4.8?ref=main
   # SR-IOV Operator
