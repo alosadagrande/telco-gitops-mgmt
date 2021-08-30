@@ -24,7 +24,8 @@ bases:
 
 resources:
 # - 03-lso-filesystemclass-default.yaml
-  
+  - 00-hook-presync-cnfdb2-prov.yaml
+
 patches:
   - ./patch-sriov-operator.yaml
   - ./patch-node-label.yaml 

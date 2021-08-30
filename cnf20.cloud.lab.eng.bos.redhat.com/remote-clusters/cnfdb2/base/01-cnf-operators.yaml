@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cnf-operators
+  name: cnf-operators-cnfdb2
   namespace: telco-gitops
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -18,8 +18,8 @@ spec:
   source:
     directory:
       jsonnet: {}
-    path: deploy/sno/4.8/enabled
-    repoURL: https://github.com/alosadagrande/argocd.git
+    path: cnf20.cloud.lab.eng.bos.redhat.com/remote-clusters/remote-clusters/cnfdb2
+    repoURL: https://github.com/alosadagrande/telco-gitops-mgmt.git
     targetRevision: main
   # Sync policy
   syncPolicy:
