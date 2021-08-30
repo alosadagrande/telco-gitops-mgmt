@@ -1,0 +1,39 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    # argocd.argoproj.io/sync-wave: "10"
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+  name: cluster-eric-operators-wait-job
+  # generateName: csv-wait-job-
+  namespace: telco-gitops
+spec:
+  template:
+    spec:
+      containers:
+        - image: registry.redhat.io/openshift4/ose-cli:latest
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "ArgoCD Hook"
+              CSV_STATUS="Pausing $SLEEP seconds..."
+              PROV_CLUSTER=eric1
+              while [[ "$CSV_STATUS" != *"condition met" ]]; do
+                echo "Waiting for installing operators in the $PROV_CLUSTER cluster. ($CSV_STATUS)"
+                sleep $SLEEP
+                CSV_STATUS=$( oc -n openshift-performance-addon-operator wait --for=condition=Ready pod -l name=performance-operator )
+              done
+              echo "$PROV_CLUSTER operators installed! Hooray!"
+          imagePullPolicy: IfNotPresent
+          name: mcp-wait-job
+          env:
+          - name: SLEEP
+            value: "3"
+      dnsPolicy: ClusterFirst
+      restartPolicy: OnFailure
+      serviceAccount: cli-job-sa
+      serviceAccountName: cli-job-sa
+      terminationGracePeriodSeconds: 30
