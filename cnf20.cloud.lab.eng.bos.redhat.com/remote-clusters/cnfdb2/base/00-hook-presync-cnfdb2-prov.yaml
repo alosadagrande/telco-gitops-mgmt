@@ -6,7 +6,7 @@ metadata:
     # argocd.argoproj.io/sync-wave: "10"
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
-  name: cluster-eric-prov-wait-job
+  name: cluster-cnfdb2-prov-wait-job
   # generateName: csv-wait-job-
   namespace: telco-gitops
 spec:
@@ -20,15 +20,15 @@ spec:
             - |
               echo "ArgoCD Hook"
               CSV_STATUS="Pausing $SLEEP seconds..."
-              PROV_CLUSTER=eric1
+              PROV_CLUSTER=cnfdb2
               while [[ "$CSV_STATUS" != *"InstallationCompleted"* ]]; do
                 echo "Waiting for the $PROV_CLUSTER cluster to be ready. ($CSV_STATUS)"
                 sleep $SLEEP
-                CSV_STATUS=$( oc get agentclusterinstalls eric1 -n eric1 -o json | python -m json.tool | grep '"reason":'  | sort -u )
+                CSV_STATUS=$( oc get agentclusterinstalls cnfdb2 -n cnfdb2 -o json | python -m json.tool | grep '"reason":'  | sort -u )
               done
               echo "$PROV_CLUSTER provisioning completed! Hooray!"
           imagePullPolicy: IfNotPresent
-          name: mcp-wait-job
+          name: provisioning-wait-job
           env:
           - name: SLEEP
             value: "3"

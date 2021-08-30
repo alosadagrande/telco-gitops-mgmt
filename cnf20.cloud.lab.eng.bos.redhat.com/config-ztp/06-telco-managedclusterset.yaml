@@ -1,4 +1,27 @@
 apiVersion: cluster.open-cluster-management.io/v1alpha1
 kind: ManagedClusterSet
 metadata:
-  name: telco-remote-argocd
+  name: telco-remote-clusterset
+---
+apiVersion: cluster.open-cluster-management.io/v1alpha1
+kind: Placement
+metadata:
+  name: placement-remote-argocd-clusters
+  namespace: telco-gitops
+spec:
+  clusterSets:
+    - telco-remote-clusterset
+---
+apiVersion: apps.open-cluster-management.io/v1alpha1
+kind: GitOpsCluster
+metadata:
+  name: gitopscluster-remote-argocd
+  namespace: telco-gitops
+spec:
+  argoServer:
+    cluster: telco-gitops 
+    argoNamespace: telco-gitops
+  placementRef:
+    kind: Placement
+    apiVersion: cluster.open-cluster-management.io/v1alpha1
+    name: placement-remote-argocd-clusters
