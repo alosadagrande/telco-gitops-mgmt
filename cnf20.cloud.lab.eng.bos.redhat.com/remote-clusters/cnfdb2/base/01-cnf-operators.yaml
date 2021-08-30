@@ -14,7 +14,7 @@ spec:
   project: default
   destination:
     namespace: telco-gitops
-    server: https://api.eric1.cloud.lab.eng.bos.redhat.com:6443 
+    server: https://api.cnfdb2.e2e.bos.redhat.com:6443 
   source:
     directory:
       jsonnet: {}

@@ -3,4 +3,4 @@ kind: Node
 metadata:
   labels:
     ran.openshift.io/sriov: ""
-  name: eric1
+  name: cnfdb2
