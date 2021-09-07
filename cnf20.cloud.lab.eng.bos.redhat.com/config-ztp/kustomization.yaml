@@ -6,6 +6,6 @@ commonAnnotations:
   argocd.argoproj.io/sync-wave: "30"
 
 resources:
-  - 00-hook-postsync-csv.yaml
+  - 00-hook-presync-csv.yaml
   - 05-telco-gitops-ztp.yaml
   - 06-telco-managedclusterset.yaml
