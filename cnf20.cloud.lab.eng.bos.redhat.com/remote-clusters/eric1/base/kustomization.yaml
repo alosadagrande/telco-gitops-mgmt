@@ -24,6 +24,7 @@ bases:
 
 resources:
   - 01-ns-telco-gitops.yaml
+  - 02-cli-job-sa-and-role.yaml
   - patch-node-label.yaml
 
 patches:
