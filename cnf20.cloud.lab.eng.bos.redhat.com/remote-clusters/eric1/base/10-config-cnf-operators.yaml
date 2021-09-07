@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 03-ztp-config-eric1
+  namespace: telco-gitops
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: telco-gitops
+    server:  https://api.eric1.cloud.lab.eng.bos.redhat.com:6443
+  source:
+    path: cnf20.cloud.lab.eng.bos.redhat.com/remote-clusters/eric1/config
+    repoURL: https://github.com/alosadagrande/telco-gitops-mgmt.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
+    syncOptions:
+    - Validate=true
+    - CreateNamespace=false
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
