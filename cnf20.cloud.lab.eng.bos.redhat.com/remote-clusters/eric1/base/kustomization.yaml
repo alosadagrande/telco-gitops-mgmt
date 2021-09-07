@@ -25,7 +25,6 @@ bases:
 resources:
   - 01-ns-telco-gitops.yaml
   - patch-node-label.yaml
-  - 10-config-cnf-operators.yaml
 
 patches:
   #- patch-sriov-operator.yaml
