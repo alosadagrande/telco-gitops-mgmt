@@ -27,4 +27,4 @@ resources:
   - patch-node-label.yaml
 
 patches:
-  - patch-sriov-operator.yaml
+  #- patch-sriov-operator.yaml
