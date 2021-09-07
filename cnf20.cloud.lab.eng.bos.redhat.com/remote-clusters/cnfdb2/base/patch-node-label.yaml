@@ -3,4 +3,6 @@ kind: Node
 metadata:
   labels:
     ran.openshift.io/sriov: ""
+  annotations:
+    argocd.argoproj.io/sync-wave: "10" 
   name: cnfdb2
