@@ -28,4 +28,4 @@ resources:
   - 01-ns-telco-gitops.yaml
   - 02-cli-job-sa-and-role.yaml
   - patch-node-label.yaml
-  - patch-sriov-operator.yaml
+#  - patch-sriov-operator.yaml
