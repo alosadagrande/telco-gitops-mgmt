@@ -1,0 +1,11 @@
+resources:
+- performance/00-hook-presync-pao.yaml
+- performance/performance-profile-sno.yaml
+- sriov/00-hook-presync-sriov.yaml
+- sriov/sriov-network-node-policy-intel-netdevice.yaml
+- sriov/sriov-network-node-policy-intel-vfio.yaml
+#- nmstate/nncp-standard-bond0.yaml
+- machineconfigs/99-master-ssh.yaml
+- ntp/99-master-chrony-configuration.yaml
+- monitoring/alertmanager-main.yaml
+- monitoring/cluster-monitoring-config.yaml

@@ -1,0 +1,9 @@
+apiVersion: sriovnetwork.openshift.io/v1
+kind: SriovOperatorConfig
+metadata:
+  name: default
+  namespace: openshift-sriov-network-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "40"  
+spec:
+  disableDrain: true
