@@ -25,7 +25,7 @@ bases:
   - github.com/alosadagrande/telco-gitops/base/operators/openshift-nmstate/nmstate-4.8?ref=main
 
 resources:
-  - 01-ns-telco-gitops.yaml
-  - 02-cli-job-sa-and-role.yaml
+  - https://raw.githubusercontent.com/alosadagrande/telco-gitops/main/base/configs/telco-gitops/00-telco-gitops-ns.yaml
+  - https://raw.githubusercontent.com/alosadagrande/telco-gitops/main/base/configs/telco-gitops/01-cli-job-sa-and-role.yaml
   - patch-node-label.yaml
-  - patch-sriov-operator.yaml
+  #- patch-sriov-operator.yaml
