@@ -29,3 +29,4 @@ resources:
   - https://raw.githubusercontent.com/alosadagrande/telco-gitops/main/base/configs/telco-gitops/01-cli-job-sa-and-role.yaml
   - patch-node-label.yaml
   #- patch-sriov-operator.yaml
+#  - patch-sriov-operator.yaml
