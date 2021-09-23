@@ -15,12 +15,18 @@ commonAnnotations:
   argocd.argoproj.io/sync-options: Prune=false
 
 bases:
-  # Common Operators
-  - github.com/alosadagrande/telco-gitops/base/configs/all-common?ref=main
-  # Operators for MGMT Clusters with Red Hat Advanced Cluster Manager for Kubernetes 
+  # Common Operators (idp = htpasswd)
+  - github.com/alosadagrande/telco-gitops/base/configs/all-common?ref=main 
+  # Operators for MGMT Clusters with Red Hat Advanced Cluster Manager for Kubernetes (ACM, LSO, GitOps, Pipelines, telco-optimized (max-pods-500,ingressx3,masters sched, fix-ipi-rwn))
   - github.com/alosadagrande/telco-gitops/blueprints/mgmt-rhacm?ref=main
   # Hive patch and clusterImageSet versions
   - github.com/alosadagrande/telco-gitops/base/configs/hive?ref=main
+  # LSO configuration
+  - github.com/alosadagrande/telco-gitops/base/configs/lso?ref=main
+  # ACM config CR
+  - github.com/alosadagrande/telco-gitops/base/configs/advanced-cluster-management?ref=main
+  # Assisted config agentServiceConfig
+  - github.com/alosadagrande/telco-gitops/base/configs/assisted-installer?ref=main
   # OpenShift Container storage
   # - github.com/openshift-telco/telco-gitops/base/operators/openshift-container-storage?ref=main
   # OpenShiftVirt
@@ -29,10 +35,10 @@ bases:
   # - github.com/openshift-telco/telco-gitops/base/operators/quay-enterprise-operator?ref=main
   # OpenShift Logging
   # - github.com/openshift-telco/telco-gitops/base/operators/openshift-logging?ref=main
-  # Configure telco-gitops for cluster
-  - ./telco-gitops
+  # Configure telco-gitops for cluster provisioning
+  #- ./telco-gitops
 
-resources:
-  - 00-lso-label-nodes.yaml
-  - 01-master-create-lvs-for-lso.yaml
-  - 02-lso-localvolume-lvs.yaml
+#resources:
+#  - 00-lso-label-nodes.yaml
+#  - 01-master-create-lvs-for-lso.yaml
+#  - 02-lso-localvolume-lvs.yaml
